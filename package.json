@@ -1,0 +1,24 @@
+{
+  "name": "react-crouton",
+  "version": "0.0.1",
+  "description": "A message component for reactjs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "react-component",
+    "message",
+    "crouton",
+    "alert"
+  ],
+   "repository": {
+    "type": "git",
+    "url": "git@github.com:xeodou/react-crouton.git"
+  },
+  "author": "xeodou@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "react": "^0.11.1"
+  }
+}
