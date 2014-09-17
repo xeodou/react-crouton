@@ -90,7 +90,7 @@ module.exports = React.createClass({
 
     this.setState({
       onDismiss: nextProps.onDismiss || this.state.onDismiss,
-      hidden: nextProps.hidden || this.state.hidden,
+      hidden: nextProps.hidden,
       buttons: buttons || this.state.buttons,
       timeout: nextProps.timeout || this.state.timeout,
       autoMiss: nextProps.autoMiss || (buttons ? this.state.autoMiss : true),
