@@ -28,11 +28,6 @@ var Crouton = require('react-crouton')
 
 ```
 
-### Event
-* `error` If some thing will emit an error event.
-* `size` If get the right package info will emit a size event describe the size of the package.
-
-
 ## License
 
 MIT

@@ -1,6 +1,6 @@
 {
   "name": "react-crouton",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A message component for reactjs.",
   "main": "index.js",
   "scripts": {
