@@ -9,11 +9,15 @@ module.exports = React.createClass({
   displayName: 'react-crouton',
 
   propTypes: {
+    id: React.PropTypes.number.isRequired,
     onDismiss: React.PropTypes.func,
     hidden: React.PropTypes.bool,
     timeout: React.PropTypes.number,
     autoMiss: React.PropTypes.bool,
-    message: React.PropTypes.string.isRequired,
+    message: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.array
+      ]).isRequired,
     type: React.PropTypes.string.isRequired,
     buttons: function(props, propName, componentName) {
       var propValue = props[propName];
@@ -48,24 +52,12 @@ module.exports = React.createClass({
     return this;
   },
 
-  componentWillMount: function() {
-    var self = this;
-    if(this.props.autoMiss){
-      var ttd = setTimeout(function() {
-        self.dismiss()
-      }, this.props.timeout);
-      self.setState({
-        ttd: ttd
-      });
-    }
-  },
-
   handleClick: function(event) {
     this.dismiss().clearTimeout();
     var item = this.state.buttons.filter(function(button){
-        return button.name === event.target.innerHTML
+        return button.name.toLowerCase() === event.target.id
       })[0];
-    if(item.listener){
+    if(item && item.listener){
       item.listener(event);
     }
   },
@@ -76,6 +68,7 @@ module.exports = React.createClass({
 
   changeState: function(nextProps) {
     var buttons = nextProps.buttons;
+    var self = this;
     if (typeof buttons === 'string')
       buttons = [buttons];
     if (buttons) {
@@ -88,19 +81,39 @@ module.exports = React.createClass({
       });
     }
 
+    var message = nextProps.message
+    if(typeof message === 'string')
+      message = [message];
+    var autoMiss = nextProps.autoMiss || (buttons ? false : true);
     this.setState({
       onDismiss: nextProps.onDismiss || this.state.onDismiss,
       hidden: nextProps.hidden,
-      buttons: buttons || this.state.buttons,
+      buttons: buttons,
       timeout: nextProps.timeout || this.state.timeout,
-      autoMiss: nextProps.autoMiss || (buttons ? this.state.autoMiss : true),
-      message: nextProps.message,
+      autoMiss: autoMiss,
+      message: message,
       type: nextProps.type
     });
+    if(autoMiss && !nextProps.hidden){
+      var ttd = setTimeout(function() {
+        self.dismiss()
+      }, this.state.timeout);
+
+      this.setState({
+        ttd: ttd
+      });
+    }
   },
 
   componentWillReceiveProps: function(nextProps) {
     this.changeState(nextProps);
+  },
+
+  shouldComponentUpdate: function(nextProps, nextState) {
+    if( nextProps.id === this.props.id ) {
+      return nextState.hidden;
+    }
+    return true
   },
 
   render: function() {
@@ -108,12 +121,20 @@ module.exports = React.createClass({
     return (
       <div className='crouton' hidden={this.state.hidden}>
         <div className={this.state.type}>
-          {this.state.message}
+          {this.state.message.map(function(msg, i){
+            return <span key={i}>{msg}</span>
+          })}
           {
             this.state.buttons ?
-            this.state.buttons.map(function(button){
-              return (<button key={button.name.toLowerCase()} className={button.name.toLowerCase()} onClick={self.handleClick} >{button.name}</button> )
-            }): null
+            <div className='buttons'>
+            {this.state.buttons.map(function(button){
+              return (<button
+                id={button.name.toLowerCase()}
+                key={button.name.toLowerCase()}
+                className={button.name.toLowerCase()}
+                onClick={self.handleClick}>{button.name}</button> )
+            })}</div>: null
+
           }
         </div>
       </div>
