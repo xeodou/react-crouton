@@ -45,7 +45,7 @@ var data = {
 
 ```
 
-## options
+## Options
 
 **id** required, every message need an unique id.
 
