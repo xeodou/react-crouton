@@ -50,6 +50,7 @@ var data = {
 **id**
     required, every message need an unique id.
     type: `number`
+
 **message**
     required, the message what you want show.
     type: `string` || `array`
@@ -58,12 +59,15 @@ var data = {
     message: 'Hello React-Crouton'
     message: ['Hello', 'React', '-', 'Crouton']
     ```
+
 **type**
     required, define what type message you want to define.
     type: `string`
+
 **hidden**
     optional, control this property to show or hidden crouton.
     type: `boolean`, default is `false`
+
 **buttons**
     optional, define the buttons that you want show to the user.
     type: `string` || `array`
@@ -80,12 +84,15 @@ var data = {
         }
     }]
     ```
+
 **autoMiss**
     optional, crouton will auto missed if set this propterty.
     type: `boolean`
+
 **timeout**
     optional, set how long (ms) to auto dismiss the crouton.
     type: `number`, default is `2000` ms (2 seconds)
+
 **onDismiss**
     optional, crouton will invoke this listener when it dismissed.
     type: `function`
