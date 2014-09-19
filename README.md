@@ -47,57 +47,57 @@ var data = {
 
 ## options
 
-**id**  
-    required, every message need an unique id.  
-    type: `number`
+**id**
+required, every message need an unique id.
+type: `number`
 
-**message**  
-    required, the message what you want show.  
-    type: `string` || `array`  
-    example:
-    
-    ```
-    message: 'Hello React-Crouton'
-    message: ['Hello', 'React', '-', 'Crouton']
-    ```
+**message**
+required, the message what you want show.
+type: `string` || `array`
+example:
 
-**type**  
-    required, define what type message you want to define.  
-    type: `string`  
+```
+message: 'Hello React-Crouton'
+message: ['Hello', 'React', '-', 'Crouton']
+```
 
-**hidden**  
-    optional, control this property to show or hidden crouton.  
-    type: `boolean`, default is `false`  
+**type**
+required, define what type message you want to define.
+type: `string`
 
-**buttons**  
-    optional, define the buttons that you want show to the user.  
-    type: `string` || `array`  
-    example: 
-    
-    ```
-    buttons: 'close'
-    butons: [{
-        name: 'close'
-    }]
-    butons: [{
-        name: 'close',
-        listener: function() {
-            console.log('close button clicked.')
-        }
-    }]
-    ```
+**hidden**
+optional, control this property to show or hidden crouton.
+type: `boolean`, default is `false`
 
-**autoMiss**  
-    optional, crouton will auto missed if set this propterty.  
-    type: `boolean`  
+**buttons**
+optional, define the buttons that you want show to the user.
+type: `string` || `array`
+example:
 
-**timeout**  
-    optional, set how long (ms) to auto dismiss the crouton.  
-    type: `number`, default is `2000` ms (2 seconds)
+```
+buttons: 'close'
+butons: [{
+    name: 'close'
+}]
+butons: [{
+    name: 'close',
+    listener: function() {
+        console.log('close button clicked.')
+    }
+}]
+```
 
-**onDismiss**  
-    optional, crouton will invoke this listener when it dismissed.  
-    type: `function`
+**autoMiss**
+optional, crouton will auto missed if set this propterty.
+type: `boolean`
+
+**timeout**
+optional, set how long (ms) to auto dismiss the crouton.
+type: `number`, default is `2000` ms (2 seconds)
+
+**onDismiss**
+optional, crouton will invoke this listener when it dismissed.
+type: `function`
 
 ## License
 
