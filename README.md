@@ -2,7 +2,7 @@
 
 > A message component for reactjs
 
-live demo coming soon
+[live dome](http://xeodou.github.io/react-crouton)
 
 ## Getting Started
 
