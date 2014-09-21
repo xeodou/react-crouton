@@ -3,9 +3,6 @@
   "version": "0.0.7",
   "description": "A message component for reactjs.",
   "main": "index.js",
-  "scripts": {
-    "test": "npm test"
-  },
   "keywords": [
     "react-component",
     "message",
@@ -23,6 +20,13 @@
       ]
     ]
   },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
+  },
   "author": "xeodou@gmail.com",
   "license": "MIT",
   "devDependencies": {
@@ -35,7 +39,9 @@
     "gulp-rimraf": "^0.1.0",
     "gulp-sass": "^0.7.3",
     "gulp-size": "^1.1.0",
+    "jest-cli": "^0.1.18",
     "react": "^0.11.2",
+    "react-tools": "^0.11.2",
     "reactify": "^0.14.0"
   }
 }
