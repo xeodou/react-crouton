@@ -191,7 +191,7 @@ var App = React.createClass({
   }
 })
 
-React.renderComponent(App(null), document.body)
+React.renderComponent(App(null), document.getElementById('crouton-example'))
 
 
 },{"../":2,"codemirror":3,"codemirror/mode/javascript/javascript":4,"react":149}],2:[function(require,module,exports){
