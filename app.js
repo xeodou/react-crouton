@@ -56,7 +56,6 @@ var Example = React.createClass({
 
   handleClick: function(event) {
     event.preventDefault();
-    var self = this;
     var data = this.props.data
     if (data['onDismiss']) {
       data['onDismiss'] = this.onDismiss
@@ -65,10 +64,10 @@ var Example = React.createClass({
       if(typeof data.buttons !== 'string') {
         data.buttons = data.buttons.map(function(button){
           if(button.listener) {
-            button.listener = self.listener;
+            button.listener = this.listener;
           }
           return button;
-        })
+        }, this)
       }
     }
     this.props.show(this.props.data)
@@ -82,18 +81,17 @@ var Example = React.createClass({
   },
 
   render: function() {
-    var self = this;
     return (
       React.DOM.div({className: "example"}, 
         React.DOM.h3({className: "title"}, this.props.data.message), 
         Code({
           doc: '<Crouton\n ' +
-            (Object.keys(self.props.data).map(function(key){
-                  var v = self.props.data[key];
+            (Object.keys(this.props.data).map(function(key){
+                  var v = this.props.data[key];
                   return key + '="' + (typeof v === 'string' ? v : JSON.stringify(v)) + '"'
-            }).join('\n ')) +
+            }, this).join('\n ')) +
             '/>'}), 
-        self.props.data.onDismiss ? React.DOM.span({className: "result"}, " ",  'result: ' + (self.state.result || '') ): null, 
+        this.props.data.onDismiss ? React.DOM.span({className: "result"}, " ",  'result: ' + (this.state.result || '') ): null, 
         React.DOM.button({className: "show", onClick: this.handleClick}, "Show")
       ))
   }
@@ -161,7 +159,6 @@ var App = React.createClass({
   },
 
   render: function() {
-    var self = this;
     return (
       React.DOM.div(null, 
         React.DOM.div({className: "header"}, 
@@ -183,8 +180,8 @@ var App = React.createClass({
         
         React.DOM.div({id: "main"}, 
           this.state.examples.map(function(example, i) {
-            return Example({key: i, show: self.show, data: example})
-          })
+            return Example({key: i, show: this.show, data: example})
+          }, this)
         )
       )
     )
@@ -265,7 +262,6 @@ module.exports = React.createClass({
 
   changeState: function(nextProps) {
     var buttons = nextProps.buttons;
-    var self = this;
     if (typeof buttons === 'string')
       buttons = [buttons];
     if (buttons) {
@@ -292,9 +288,7 @@ module.exports = React.createClass({
       type: nextProps.type
     });
     if(autoMiss && !nextProps.hidden){
-      var ttd = setTimeout(function() {
-        self.dismiss()
-      }, this.state.timeout);
+      var ttd = setTimeout(this.dismiss.bind(this), this.state.timeout);
 
       this.setState({
         ttd: ttd
@@ -314,7 +308,6 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var self = this;
     return (
       React.DOM.div({className: "crouton", hidden: this.state.hidden}, 
         React.DOM.div({className: this.state.type}, 
@@ -329,8 +322,8 @@ module.exports = React.createClass({
                 id: button.name.toLowerCase(), 
                 key: button.name.toLowerCase(), 
                 className: button.name.toLowerCase(), 
-                onClick: self.handleClick}, button.name) )
-            })): null
+                onClick: this.handleClick}, button.name) )
+            }, this)): null
 
           
         )
