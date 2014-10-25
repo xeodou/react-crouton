@@ -43,17 +43,22 @@ module.exports = React.createClass({
     if (this.state.onDismiss) {
       this.state.onDismiss();
     }
+    this.clearTimeout();
     return this;
   },
 
   clearTimeout: function() {
-    if(this.state.ttd)
-      clearTimeout(this.state.ttd)
+    if (this.state.ttd) {
+      clearTimeout(this.state.ttd);
+      this.setState({
+        ttd: null
+      });
+    }
     return this;
   },
 
   handleClick: function(event) {
-    this.dismiss().clearTimeout();
+    this.dismiss();
     var item = this.state.buttons.filter(function(button){
         return button.name.toLowerCase() === event.target.id
       })[0];
@@ -94,8 +99,7 @@ module.exports = React.createClass({
       type: nextProps.type
     });
     if(autoMiss && !nextProps.hidden){
-      var ttd = setTimeout(this.dismiss.bind(this), this.state.timeout);
-
+      var ttd = setTimeout(this.dismiss, this.state.timeout);
       this.setState({
         ttd: ttd
       });
