@@ -55,7 +55,6 @@ var Example = React.createClass({
 
   handleClick: function(event) {
     event.preventDefault();
-    var self = this;
     var data = this.props.data
     if (data['onDismiss']) {
       data['onDismiss'] = this.onDismiss
@@ -64,10 +63,10 @@ var Example = React.createClass({
       if(typeof data.buttons !== 'string') {
         data.buttons = data.buttons.map(function(button){
           if(button.listener) {
-            button.listener = self.listener;
+            button.listener = this.listener;
           }
           return button;
-        })
+        }, this)
       }
     }
     this.props.show(this.props.data)
@@ -81,18 +80,17 @@ var Example = React.createClass({
   },
 
   render: function() {
-    var self = this;
     return (
       <div className='example'>
         <h3 className='title'>{this.props.data.message}</h3>
         <Code
           doc={'<Crouton\n ' +
-            (Object.keys(self.props.data).map(function(key){
-                  var v = self.props.data[key];
+            (Object.keys(this.props.data).map(function(key){
+                  var v = this.props.data[key];
                   return key + '="' + (typeof v === 'string' ? v : JSON.stringify(v)) + '"'
-            }).join('\n ')) +
+            }, this).join('\n ')) +
             '/>'} />
-        {self.props.data.onDismiss ? <span className='result'> { 'result: ' + (self.state.result || '') }</span>: null}
+        {this.props.data.onDismiss ? <span className='result'> { 'result: ' + (this.state.result || '') }</span>: null}
         <button className='show' onClick={this.handleClick}>Show</button>
       </div>)
   }
@@ -160,7 +158,6 @@ var App = React.createClass({
   },
 
   render: function() {
-    var self = this;
     return (
       <div>
         <div className='header'>
@@ -182,8 +179,8 @@ var App = React.createClass({
         }
         <div id='main'>
           {this.state.examples.map(function(example, i) {
-            return <Example key={i} show={self.show} data={example}/>
-          })}
+            return <Example key={i} show={this.show} data={example}/>
+          }, this)}
         </div>
       </div>
     )
