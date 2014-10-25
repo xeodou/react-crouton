@@ -68,7 +68,6 @@ module.exports = React.createClass({
 
   changeState: function(nextProps) {
     var buttons = nextProps.buttons;
-    var self = this;
     if (typeof buttons === 'string')
       buttons = [buttons];
     if (buttons) {
@@ -95,9 +94,7 @@ module.exports = React.createClass({
       type: nextProps.type
     });
     if(autoMiss && !nextProps.hidden){
-      var ttd = setTimeout(function() {
-        self.dismiss()
-      }, this.state.timeout);
+      var ttd = setTimeout(this.dismiss.bind(this), this.state.timeout);
 
       this.setState({
         ttd: ttd
@@ -117,7 +114,6 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    var self = this;
     return (
       <div className='crouton' hidden={this.state.hidden}>
         <div className={this.state.type}>
@@ -132,8 +128,8 @@ module.exports = React.createClass({
                 id={button.name.toLowerCase()}
                 key={button.name.toLowerCase()}
                 className={button.name.toLowerCase()}
-                onClick={self.handleClick}>{button.name}</button> )
-            })}</div>: null
+                onClick={this.handleClick}>{button.name}</button> )
+            }, this)}</div>: null
 
           }
         </div>
