@@ -3,6 +3,7 @@
  */
 
 var React = window.React = require('react')
+  , assign = require('react/lib/Object.assign')
   , Crouton = require('../')
   , CodeMirror = require('codemirror')
 
@@ -31,7 +32,7 @@ var Code = React.createClass({
   },
 
   render: function() {
-    return this.transferPropsTo(<div />);
+    return React.createElement('div', assign({}, this.props))
   }
 })
 
@@ -187,5 +188,5 @@ var App = React.createClass({
   }
 })
 
-React.renderComponent(<App />, document.getElementById('crouton-example'))
+React.render(<App />, document.getElementById('crouton-example'))
 
