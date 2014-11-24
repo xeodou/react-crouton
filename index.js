@@ -3,30 +3,31 @@
  */
 
 var React = require('react')
+var PropTypes = React.PropTypes
 
 module.exports = React.createClass({
 
   displayName: 'react-crouton',
 
   propTypes: {
-    id: React.PropTypes.number.isRequired,
-    onDismiss: React.PropTypes.func,
-    hidden: React.PropTypes.bool,
-    timeout: React.PropTypes.number,
-    autoMiss: React.PropTypes.bool,
-    message: React.PropTypes.oneOfType([
-      React.PropTypes.string,
-      React.PropTypes.array
-      ]).isRequired,
-    type: React.PropTypes.string.isRequired,
-    buttons: function(props, propName, componentName) {
+    id: PropTypes.number.isRequired,
+    onDismiss: PropTypes.func,
+    hidden: PropTypes.bool,
+    timeout: PropTypes.number,
+    autoMiss: PropTypes.bool,
+    message: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.array
+    ]).isRequired,
+    type: PropTypes.string.isRequired,
+    buttons: function (props, propName, componentName) {
       var propValue = props[propName];
       if (propValue != null && typeof propValue !== 'string' && typeof propValue !== 'object' && !(typeof propValue === 'object' && propValue.name != null))
-        return new Error('Expected a string or an URI for ' + propName + ' in ' + componentName );
+        return new Error('Expected a string or an URI for ' + propName + ' in ' + componentName);
     }
   },
 
-  getInitialState: function() {
+  getInitialState: function () {
     return {
       // 2000 ms
       timeout: 2000,
@@ -36,7 +37,7 @@ module.exports = React.createClass({
     };
   },
 
-  dismiss: function() {
+  dismiss: function () {
     this.setState({
       hidden: true
     });
@@ -47,7 +48,7 @@ module.exports = React.createClass({
     return this;
   },
 
-  clearTimeout: function() {
+  clearTimeout: function () {
     if (this.state.ttd) {
       clearTimeout(this.state.ttd);
       this.setState({
@@ -57,26 +58,30 @@ module.exports = React.createClass({
     return this;
   },
 
-  handleClick: function(event) {
+  handleClick: function (event) {
     this.dismiss();
-    var item = this.state.buttons.filter(function(button){
-        return button.name.toLowerCase() === event.target.id
-      })[0];
-    if(item && item.listener){
+    var item = this.state.buttons.filter(function (button) {
+      return button.name.toLowerCase() === event.target.id
+    })[0];
+    if (item && item.listener) {
       item.listener(event);
     }
   },
 
-  componentWillMount: function() {
+  componentWillMount: function () {
     this.changeState(this.props);
   },
 
-  changeState: function(nextProps) {
+  componentWillUnmount: function() {
+    this.clearTimeout();
+  },
+
+  changeState: function (nextProps) {
     var buttons = nextProps.buttons;
     if (typeof buttons === 'string')
       buttons = [buttons];
     if (buttons) {
-      buttons = buttons.map(function(button) {
+      buttons = buttons.map(function (button) {
         if (typeof button === 'string')
           return {
             name: button
@@ -86,7 +91,7 @@ module.exports = React.createClass({
     }
 
     var message = nextProps.message
-    if(typeof message === 'string')
+    if (typeof message === 'string')
       message = [message];
     var autoMiss = nextProps.autoMiss || (buttons ? false : true);
     this.setState({
@@ -98,7 +103,7 @@ module.exports = React.createClass({
       message: message,
       type: nextProps.type
     });
-    if(autoMiss && !nextProps.hidden){
+    if (autoMiss && !nextProps.hidden) {
       var ttd = setTimeout(this.dismiss, this.state.timeout);
       this.setState({
         ttd: ttd
@@ -106,38 +111,43 @@ module.exports = React.createClass({
     }
   },
 
-  componentWillReceiveProps: function(nextProps) {
+  componentWillReceiveProps: function (nextProps) {
     this.changeState(nextProps);
   },
 
-  shouldComponentUpdate: function(nextProps, nextState) {
-    if( nextProps.id === this.props.id ) {
+  shouldComponentUpdate: function (nextProps, nextState) {
+    if (nextProps.id === this.props.id) {
       return nextState.hidden;
     }
     return true
   },
 
-  render: function() {
-    return (
-      <div className='crouton' hidden={this.state.hidden}>
-        <div className={this.state.type}>
-          {this.state.message.map(function(msg, i){
-            return <span key={i}>{msg}</span>
-          })}
-          {
-            this.state.buttons ?
-            <div className='buttons'>
-            {this.state.buttons.map(function(button){
-              return (<button
-                id={button.name.toLowerCase()}
-                key={button.name.toLowerCase()}
-                className={button.name.toLowerCase()}
-                onClick={this.handleClick}>{button.name}</button> )
-            }, this)}</div>: null
-
-          }
-        </div>
-      </div>
+  render: function () {
+    return React.createElement('div', {
+        className: 'crouton',
+        hidden: this.state.hidden
+      },
+      React.createElement('div', {
+          className: this.state.type
+        },
+        this.state.message.map(function (msg, i) {
+          return React.createElement('span', {
+            key: i
+          }, msg);
+        }),
+        this.state.buttons ? React.createElement('div', {
+            className: 'buttons'
+          },
+          this.state.buttons.map(function (button, i) {
+            return React.createElement('button', {
+              id: button.name.toLowerCase(),
+              key: i,
+              className: button.name.toLowerCase(),
+              onClick: this.handleClick
+            }, button.name)
+          }, this)
+        ) : null
+      )
     )
   }
 })

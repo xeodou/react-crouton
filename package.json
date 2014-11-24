@@ -1,6 +1,6 @@
 {
   "name": "react-crouton",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A message component for reactjs.",
   "main": "index.js",
   "keywords": [
@@ -13,19 +13,16 @@
     "type": "git",
     "url": "git@github.com:xeodou/react-crouton.git"
   },
-  "browserify": {
-    "transform": [
-      [
-        "reactify"
-      ]
-    ]
-  },
   "scripts": {
     "test": "jest"
   },
   "jest": {
-    "scriptPreprocessor": "<rootDir>/preprocessor.js",
-    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
+  },
+  "peerDependencies": {
+    "react": "0.12.x"
   },
   "author": "xeodou@gmail.com",
   "license": "MIT",
@@ -40,8 +37,7 @@
     "gulp-sass": "^0.7.3",
     "gulp-size": "^1.1.0",
     "jest-cli": "^0.1.18",
-    "react": "^0.11.2",
-    "react-tools": "^0.11.2",
-    "reactify": "^0.14.0"
+    "react": "^0.12.1",
+    "reactify": "^0.17.1"
   }
 }
