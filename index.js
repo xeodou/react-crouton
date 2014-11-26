@@ -117,7 +117,7 @@ module.exports = React.createClass({
 
   shouldComponentUpdate: function (nextProps, nextState) {
     if (nextProps.id === this.props.id) {
-      return nextState.hidden;
+      return !!nextState.hidden;
     }
     return true
   },
