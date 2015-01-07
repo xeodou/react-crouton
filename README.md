@@ -6,7 +6,7 @@
 
 ## Getting Started
 
-Install via [npm](http://npmjs.org/grs)
+Install via [npm](http://npmjs.org/react-crouton)
 
 ```shell
    npm i react-crouton --save-dev
