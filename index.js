@@ -1,8 +1,5 @@
-/**
- * @jsx React.DOM
- */
-
 var React = require('react')
+var emptyFunction = require('react/lib/emptyFunction');
 var PropTypes = React.PropTypes
 
 module.exports = React.createClass({
@@ -20,11 +17,23 @@ module.exports = React.createClass({
       PropTypes.array
     ]).isRequired,
     type: PropTypes.string.isRequired,
-    buttons: function (props, propName, componentName) {
-      var propValue = props[propName];
-      if (propValue != null && typeof propValue !== 'string' && typeof propValue !== 'object' && !(typeof propValue === 'object' && propValue.name != null))
-        return new Error('Expected a string or an URI for ' + propName + ' in ' + componentName);
-    }
+    buttons: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string
+      })), PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string,
+        listener: PropTypes.func
+      }))
+    ])
+  },
+
+  getDefaultProps: function () {
+    return {
+      onDismiss: emptyFunction,
+      timeout: 2000,
+      autoMiss: false
+    };
   },
 
   getInitialState: function () {
@@ -41,9 +50,7 @@ module.exports = React.createClass({
     this.setState({
       hidden: true
     });
-    if (this.state.onDismiss) {
-      this.state.onDismiss();
-    }
+    this.props.onDismiss();
     this.clearTimeout();
     return this;
   },
@@ -72,7 +79,7 @@ module.exports = React.createClass({
     this.changeState(this.props);
   },
 
-  componentWillUnmount: function() {
+  componentWillUnmount: function () {
     this.clearTimeout();
   },
 
@@ -95,7 +102,6 @@ module.exports = React.createClass({
       message = [message];
     var autoMiss = nextProps.autoMiss || (buttons ? false : true);
     this.setState({
-      onDismiss: nextProps.onDismiss || this.state.onDismiss,
       hidden: nextProps.hidden,
       buttons: buttons,
       timeout: nextProps.timeout || this.state.timeout,
