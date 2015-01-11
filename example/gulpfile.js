@@ -1,12 +1,13 @@
 'use strict';
 
-var gulp = require('gulp')
-  , browserify = require('gulp-browserify')
-  , $ = require('gulp-load-plugins')()    // Load plugins
-  , path = require('path')
-  , sass = require('gulp-sass')
-  , deploy = require("gulp-gh-pages")
-  , pkg = require('../package.json');
+var gulp = require('gulp');
+var browserify = require('gulp-browserify');
+var $ = require('gulp-load-plugins')();
+var path = require('path');
+var sass = require('gulp-sass');
+var deploy = require('gulp-gh-pages');
+var pkg = require('../package.json');
+var connect = require('gulp-connect');
 
 var root = path.resolve(__dirname)
 
@@ -41,6 +42,14 @@ gulp.task('browserify', function() {
     .pipe($.size());
 });
 
+// Connect
+gulp.task('connect', function() {
+  connect.server({
+    root: 'build',
+    livereload: true
+  });
+});
+
 // Clean
 gulp.task('clean', function() {
   return gulp.src([root + '/build/*'], {
@@ -50,7 +59,7 @@ gulp.task('clean', function() {
 });
 
 // Watch
-gulp.task('watch', function() {
+gulp.task('watch', ['connect'], function() {
   // Wathch .scss files
   gulp.watch('style.scss', ['sass']);
   // Watch .jsx files
