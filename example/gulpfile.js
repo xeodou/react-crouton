@@ -60,10 +60,12 @@ gulp.task('clean', function() {
 
 // Watch
 gulp.task('watch', ['connect'], function() {
+  // index html
+  gulp.watch('index.html', ['index']);
   // Wathch .scss files
   gulp.watch('style.scss', ['sass']);
   // Watch .jsx files
-  gulp.watch('app.js', ['browserify']);
+  gulp.watch(['app.js', '../index.js'], ['browserify']);
 
 })
 
