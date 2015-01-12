@@ -14,7 +14,8 @@
     "url": "git@github.com:xeodou/react-crouton.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "watch": "./node_modules/.bin/gulp watch --gulpfile example/gulpfile.js"
   },
   "jest": {
     "unmockedModulePathPatterns": [
