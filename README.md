@@ -89,7 +89,7 @@ butons: [{
 }]
 ```
 
-**autoMiss** optional, crouton will auto missed if set this propterty.
+**autoMiss** optional, crouton will auto missed if set this propterty, default is true.
 
 type: `boolean`
 

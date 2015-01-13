@@ -1,6 +1,6 @@
 {
   "name": "react-crouton",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A message component for reactjs.",
   "main": "index.js",
   "keywords": [
@@ -15,7 +15,8 @@
   },
   "scripts": {
     "test": "jest",
-    "watch": "./node_modules/.bin/gulp watch --gulpfile example/gulpfile.js"
+    "watch": "./node_modules/.bin/gulp watch --gulpfile example/gulpfile.js",
+    "deploy": "./node_modules/.bin/gulp deploy --gulpfile example/gulpfile.js"
   },
   "jest": {
     "unmockedModulePathPatterns": [
