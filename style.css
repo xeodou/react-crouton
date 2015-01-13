@@ -1149,17 +1149,13 @@ body {
   font-size: initial;
   text-align: left;
   box-sizing: default;
-  overflow-y: hidden;
-  overflow-x: auto; }
+  overflow-y: hidden; }
 
-.CodeMirror-gutters, .listing {
+.CodeMirror-gutters .listing {
   background-color: #f7f7ff; }
 
-.CodeMirror-linenumbers {
-  padding-right: 10px; }
-
-.CodeMirror-lines {
-  padding: 1em 0 1em 1em; }
+.CodeMirror-gutter-wrapper {
+  position: absolute; }
 
 .header {
   padding-top: 80px;
