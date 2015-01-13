@@ -1,6 +1,21 @@
-var React = require('react')
+var React = require('react');
 var emptyFunction = require('react/lib/emptyFunction');
-var PropTypes = React.PropTypes
+var PropTypes = React.PropTypes;
+
+function formatButtons(buttons) {
+  if (typeof buttons === 'string')
+    buttons = [buttons];
+  if (buttons) {
+    buttons = buttons.map(function (button) {
+      if (typeof button === 'string')
+        return {
+          name: button
+        };
+      return button;
+    });
+  }
+  return buttons || null;
+}
 
 module.exports = React.createClass({
 
@@ -17,11 +32,25 @@ module.exports = React.createClass({
       PropTypes.array
     ]).isRequired,
     type: PropTypes.string.isRequired,
+    /**
+     * Buttons can be either `string` or `array`
+     *
+     * Example:
+     *
+     * ```
+     *  <Crouton buttons='close'/>
+     *  or
+     *  <Crouton buttons=[{name: 'close'}, {name: 'retry'}] />
+     *  or
+     *  <Crouton buttons=[{name: 'close', listener: somefunction}] />
+     * ```
+     */
     buttons: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string
-      })), PropTypes.arrayOf(PropTypes.shape({
+      })),
+      PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string,
         listener: PropTypes.func
       }))
@@ -31,16 +60,14 @@ module.exports = React.createClass({
   getDefaultProps: function () {
     return {
       onDismiss: emptyFunction,
+      // 2000 ms
       timeout: 2000,
-      autoMiss: false
+      autoMiss: true
     };
   },
 
   getInitialState: function () {
     return {
-      // 2000 ms
-      timeout: 2000,
-      autoMiss: false,
       hidden: false,
       ttd: null
     };
@@ -84,33 +111,20 @@ module.exports = React.createClass({
   },
 
   changeState: function (nextProps) {
-    var buttons = nextProps.buttons;
-    if (typeof buttons === 'string')
-      buttons = [buttons];
-    if (buttons) {
-      buttons = buttons.map(function (button) {
-        if (typeof button === 'string')
-          return {
-            name: button
-          };
-        return button;
-      });
-    }
+    var buttons = formatButtons(nextProps.buttons);
 
     var message = nextProps.message
     if (typeof message === 'string')
       message = [message];
-    var autoMiss = nextProps.autoMiss || (buttons ? false : true);
+    var autoMiss = nextProps.autoMiss ? (buttons ? false : true) : nextProps.autoMiss;
     this.setState({
       hidden: nextProps.hidden,
       buttons: buttons,
-      timeout: nextProps.timeout || this.state.timeout,
-      autoMiss: autoMiss,
       message: message,
       type: nextProps.type
     });
     if (autoMiss && !nextProps.hidden) {
-      var ttd = setTimeout(this.dismiss, this.state.timeout);
+      var ttd = setTimeout(this.dismiss, nextProps.timeout || this.props.timeout);
       this.setState({
         ttd: ttd
       });
