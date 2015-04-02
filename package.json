@@ -39,7 +39,7 @@
     "gulp-rimraf": "^0.1.0",
     "gulp-sass": "^0.7.3",
     "gulp-size": "^1.1.0",
-    "jest-cli": "^0.1.18",
+    "jest-cli": "^0.2.2",
     "react": "^0.12.1",
     "reactify": "^0.17.1"
   }

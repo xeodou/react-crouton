@@ -3,7 +3,7 @@
 jest.dontMock('../index.js')
 
 var React = require('react/addons')
-var Crouton = require('../index.js')
+var Crouton = React.createFactory(require('../index.js'))
 var TestUtils = React.addons.TestUtils
 
 describe('Crouton', function () {
