@@ -43,6 +43,8 @@ module.exports = React.createClass({
      *  <Crouton buttons=[{name: 'close'}, {name: 'retry'}] />
      *  or
      *  <Crouton buttons=[{name: 'close', listener: somefunction}] />
+     *  or
+     *  <Crouton buttons=[{name: 'close', className: 'btn close', listener: somefunction}] />
      * ```
      */
     buttons: PropTypes.oneOfType([
@@ -52,6 +54,7 @@ module.exports = React.createClass({
       })),
       PropTypes.arrayOf(PropTypes.shape({
         name: PropTypes.string,
+        className: PropTypes.string,
         listener: PropTypes.func
       }))
     ])
@@ -162,7 +165,7 @@ module.exports = React.createClass({
             return React.createElement('button', {
               id: button.name.toLowerCase(),
               key: i,
-              className: button.name.toLowerCase(),
+              className: button.className ? button.className : button.name.toLowerCase(),
               onClick: this.handleClick
             }, button.name)
           }, this)

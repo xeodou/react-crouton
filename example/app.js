@@ -126,6 +126,15 @@ var App = React.createClass({
           listener: 'listener'
         }],
         onDismiss: 'onDismiss'
+      },,{
+        message: 'Simple example with one custom class button and listener',
+        type: 'info',
+        buttons: [{
+          name: 'close',
+          className: 'btn close',
+          listener: 'listener'
+        }],
+        onDismiss: 'onDismiss'
       },{
         message: 'Simple example with two button and listener',
         type: 'info',
@@ -134,6 +143,17 @@ var App = React.createClass({
           listener: 'listener'
         },{
           name: 'close'
+        }],
+        onDismiss: 'onDismiss'
+      },{
+        message: 'Simple example with two custom class button and listener',
+        type: 'info',
+        buttons: [{
+          name: 'retry',
+          listener: 'listener'
+        },{
+          name: 'close',
+          className: 'btn close'
         }],
         onDismiss: 'onDismiss'
       },{

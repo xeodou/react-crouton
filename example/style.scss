@@ -112,6 +112,7 @@ body {
     .buttons {
       text-align: right;
       button {
+        &.btn,
         &.retry,
         &.close,
         &.cancel,
@@ -123,6 +124,12 @@ body {
         &:hover { opacity: .75; }
         &.retry {
           border-color: #FFF;
+        }
+        &.btn {
+          &.close {
+            border-color: #FF5F5F;
+            margin-left: 10px;
+          }
         }
       }
     }
