@@ -89,7 +89,7 @@ butons: [{
 }]
 butons: [{
     name: 'close',
-    className: 'custome class name',
+    className: 'custom class name',
     listener: function() {
         console.log('close button clicked.')
     }
