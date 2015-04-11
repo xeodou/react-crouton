@@ -87,6 +87,13 @@ butons: [{
         console.log('close button clicked.')
     }
 }]
+butons: [{
+    name: 'close',
+    className: 'custome class name',
+    listener: function() {
+        console.log('close button clicked.')
+    }
+}]
 ```
 
 **autoMiss** optional, crouton will auto missed if set this propterty, default is true.
