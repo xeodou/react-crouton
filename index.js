@@ -120,16 +120,22 @@ module.exports = React.createClass({
     if (typeof message === 'string')
       message = [message];
     var autoMiss = nextProps.autoMiss ? (buttons ? false : true) : nextProps.autoMiss;
-    this.setState({
-      hidden: nextProps.hidden,
-      buttons: buttons,
-      message: message,
-      type: nextProps.type
-    });
     if (autoMiss && !nextProps.hidden) {
       var ttd = setTimeout(this.dismiss, nextProps.timeout || this.props.timeout);
+      this.dismiss();
       this.setState({
-        ttd: ttd
+        ttd: ttd,
+        hidden: nextProps.hidden,
+        buttons: buttons,
+        message: message,
+        type: nextProps.type
+      });
+    } else {
+      this.setState({
+        hidden: nextProps.hidden,
+        buttons: buttons,
+        message: message,
+        type: nextProps.type
       });
     }
   },
