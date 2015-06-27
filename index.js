@@ -122,7 +122,7 @@ module.exports = React.createClass({
     var autoMiss = nextProps.autoMiss ? (buttons ? false : true) : nextProps.autoMiss;
     if (autoMiss && !nextProps.hidden) {
       var ttd = setTimeout(this.dismiss, nextProps.timeout || this.props.timeout);
-      this.dismiss();
+      // this.dismiss();
       this.setState({
         ttd: ttd,
         hidden: nextProps.hidden,
