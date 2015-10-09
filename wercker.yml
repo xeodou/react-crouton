@@ -1,4 +1,4 @@
-box: node:latest
+box: library/node:latest
 # Build definition
 build:
   # The steps that will be executed on build
