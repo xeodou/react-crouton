@@ -1,6 +1,7 @@
 var React = require('react');
-var emptyFunction = require('react/lib/emptyFunction');
 var PropTypes = React.PropTypes;
+
+var noop = function() {}
 
 function formatButtons(buttons) {
   if (typeof buttons === 'string')
@@ -62,7 +63,7 @@ module.exports = React.createClass({
 
   getDefaultProps: function () {
     return {
-      onDismiss: emptyFunction,
+      onDismiss: noop,
       // 2000 ms
       timeout: 2000,
       autoMiss: true
