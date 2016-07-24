@@ -3,7 +3,7 @@
  */
 
 var React = window.React = require('react')
-  , assign = require('react/lib/Object.assign')
+  , ReactDOM = require('react-dom')
   , Crouton = require('../')
   , CodeMirror = require('codemirror')
 
@@ -21,7 +21,7 @@ var Code = React.createClass({
   },
 
   componentDidMount: function() {
-    CodeMirror(this.getDOMNode(), {
+    CodeMirror(this.refs.code, {
       value: this.props.doc,
       mode: this.props.mode,
       theme: 'eclipse',
@@ -32,7 +32,9 @@ var Code = React.createClass({
   },
 
   render: function() {
-    return React.createElement('div', assign({}, this.props))
+    return React.createElement('div', Object.assign({
+      ref: 'code',
+    }, this.props))
   }
 })
 
@@ -126,7 +128,16 @@ var App = React.createClass({
           listener: 'listener'
         }],
         onDismiss: 'onDismiss'
-      },,{
+      },{
+        message: 'Render with children and one button and listener',
+        children: true,
+        type: 'info',
+        buttons: [{
+          name: 'close',
+          listener: 'listener'
+        }],
+        onDismiss: 'onDismiss'
+      },{
         message: 'Simple example with one custom class button and listener',
         type: 'info',
         buttons: [{
@@ -179,6 +190,7 @@ var App = React.createClass({
   },
 
   render: function() {
+    var crouton = this.state.crouton || {};
     return (
       <div>
         <div className='header'>
@@ -186,17 +198,21 @@ var App = React.createClass({
           <h4>A message component for reactjs</h4>
         </div>
         {
-          this.state.crouton && this.state.crouton.message ?
+          crouton && crouton.message ?
           <Crouton
            id={Date.now()}
-           message={this.state.crouton.message}
-           type={this.state.crouton.type}
-           autoMiss={this.state.crouton.autoMiss}
-           onDismiss={this.state.crouton.onDismiss}
-           buttons={this.state.crouton.buttons}
-           hidden={this.state.crouton.hidden}
-           timeout={this.state.crouton.timeout}
-          /> : null
+           message={crouton.message}
+           type={crouton.type}
+           autoMiss={crouton.autoMiss}
+           onDismiss={crouton.onDismiss}
+           buttons={crouton.buttons}
+           hidden={crouton.hidden}
+           timeout={crouton.timeout}>
+           {
+            crouton.children ? <h2>{crouton.message}</h2> : null
+           }
+          </Crouton>
+          : null
         }
         <div id='main'>
           {this.state.examples.map(function(example, i) {
@@ -208,5 +224,5 @@ var App = React.createClass({
   }
 })
 
-React.render(<App />, document.getElementById('crouton-example'))
+ReactDOM.render(<App />, document.getElementById('crouton-example'))
 

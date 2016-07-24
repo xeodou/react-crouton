@@ -1,6 +1,6 @@
 {
   "name": "react-crouton",
-  "version": "0.2.7",
+  "version": "0.3.0",
   "description": "A message component for reactjs.",
   "main": "index.js",
   "keywords": [
@@ -24,7 +24,7 @@
     ]
   },
   "peerDependencies": {
-    "react": ">=0.12.x"
+    "react": ">=15.0.x"
   },
   "author": "xeodou@gmail.com",
   "license": "MIT",
@@ -37,11 +37,12 @@
     "gulp-gh-pages": "^0.3.4",
     "gulp-load-plugins": "^0.6.0",
     "gulp-rimraf": "^0.1.0",
-    "gulp-sass": "^0.7.3",
+    "gulp-sass": "^2.3.2",
     "gulp-size": "^1.1.0",
-    "jest-cli": ">0.2.2",
-    "react": ">0.12.1",
-    "react-addons-test-utils": "^0.14.0",
-    "reactify": ">0.17.1"
+    "jest-cli": "^13.2.3",
+    "react": "^15.2.1",
+    "react-addons-test-utils": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "reactify": "^1.1.1"
   }
 }

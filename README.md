@@ -41,7 +41,10 @@ var data = {
     buttons={data.buttons}
     hidden={data.hidden}
     timeout={data.timeout}
-    autoMiss={data.autoMiss}/>
+    autoMiss={data.autoMiss}>
+// You can render child component here
+// <ChildComponent />
+</Crouton>
 
 ```
 

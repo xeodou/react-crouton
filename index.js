@@ -152,6 +152,15 @@ module.exports = React.createClass({
     return true
   },
 
+  renderChildren: function () {
+    if (this.props.children) return this.props.children;
+    return this.state.message.map(function (msg, i) {
+      return React.createElement('span', {
+        key: i
+      }, msg);
+    });
+  },
+
   render: function () {
     return React.createElement('div', {
         className: 'crouton',
@@ -160,11 +169,8 @@ module.exports = React.createClass({
       React.createElement('div', {
           className: this.state.type
         },
-        this.state.message.map(function (msg, i) {
-          return React.createElement('span', {
-            key: i
-          }, msg);
-        }),
+        this.renderChildren()
+        ,
         this.state.buttons ? React.createElement('div', {
             className: 'buttons'
           },

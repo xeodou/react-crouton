@@ -36,12 +36,6 @@ describe('Crouton', function () {
     expect(spans[0], data.message)
       // No buttons
     expect(cdiv.getElementsByTagName('button'), [])
-      // Crouton will hidden after 2000 ms default
-    runs(function () {
-      setTimeout(function () {
-        expect(pdiv.hidden, true)
-      }, 2000)
-    })
   })
 
   it('should render an message array', function () {
@@ -66,13 +60,6 @@ describe('Crouton', function () {
     expect(spans.length, 2)
     data.message.forEach(function (msg, i) {
       expect(spans[i], data.message[i])
-    })
-    var done = false
-      // Crouton will hidden after 2000 ms default
-    runs(function () {
-      setTimeout(function () {
-        expect(pdiv.hidden, true)
-      }, 2000)
     })
   })
 })
