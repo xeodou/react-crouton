@@ -1,4 +1,4 @@
-# React-Crouton
+# React-Crouton [![Build Status](https://travis-ci.org/xeodou/react-crouton.svg?branch=master)](https://travis-ci.org/xeodou/react-crouton)
 
 > A message component for reactjs
 
