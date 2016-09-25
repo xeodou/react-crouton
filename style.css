@@ -27,14 +27,28 @@ body {
  * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
   display: block; }
 
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-audio, canvas, progress, video {
+audio,
+canvas,
+progress,
+video {
   display: inline-block;
   /* 1 */
   vertical-align: baseline;
@@ -52,7 +66,8 @@ audio:not([controls]) {
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
  */
-[hidden], template {
+[hidden],
+template {
   display: none; }
 
 /* Links
@@ -66,7 +81,8 @@ a {
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
-a:active, a:hover {
+a:active,
+a:hover {
   outline: 0; }
 
 /* Text-level semantics
@@ -80,7 +96,8 @@ abbr[title] {
 /**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
  */
-b, strong {
+b,
+strong {
   font-weight: bold; }
 
 /**
@@ -113,7 +130,8 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -164,7 +182,10 @@ pre {
 /**
  * Address odd `em`-unit font size rendering in all browsers.
  */
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   font-family: monospace, monospace;
   font-size: 1em; }
 
@@ -180,7 +201,11 @@ code, kbd, pre, samp {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   color: inherit;
   /* 1 */
   font: inherit;
@@ -200,7 +225,8 @@ button {
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox.
  */
-button, select {
+button,
+select {
   text-transform: none; }
 
 /**
@@ -210,7 +236,10 @@ button, select {
  * 3. Improve usability and consistency of cursor style between image-type
  *    `input` and others.
  */
-button, html input[type="button"], input[type="reset"], input[type="submit"] {
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -219,13 +248,15 @@ button, html input[type="button"], input[type="reset"], input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-button[disabled], html input[disabled] {
+button[disabled],
+html input[disabled] {
   cursor: default; }
 
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
@@ -243,7 +274,8 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -254,7 +286,8 @@ input[type="checkbox"], input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
 /**
@@ -275,7 +308,8 @@ input[type="search"] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 /**
@@ -318,7 +352,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-td, th {
+td,
+th {
   padding: 0; }
 
 /* Bourbon */
@@ -338,8 +373,8 @@ body {
 
 @font-face {
   font-family: 'icons';
-  src: url('fonts/icons.eot');
-  src: url('fonts/icons.eot?#iefix') format('embedded-opentype'), url('fonts/icons.woff') format('woff'), url('fonts/icons.ttf') format('truetype'), url('fonts/icons.svg#Icons') format('svg');
+  src: url("fonts/icons.eot");
+  src: url("fonts/icons.eot?#iefix") format("embedded-opentype"), url("fonts/icons.woff") format("woff"), url("fonts/icons.ttf") format("truetype"), url("fonts/icons.svg#Icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -353,15 +388,19 @@ label {
   display: block;
   margin-bottom: 5px; }
 
-input, textarea, select {
+input,
+textarea,
+select {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit; }
 
-input:not([type=submit]), textarea, .select select {
-  background: #fafafa;
-  border: 1px solid #dfdfe0;
+input:not([type=submit]),
+textarea,
+.select select {
+  background: #fbfbfb;
+  border: 1px solid #e0e0e1;
   border-radius: 2px;
   padding: 4px 10px;
   -webkit-transition-property: background, border;
@@ -370,17 +409,79 @@ input:not([type=submit]), textarea, .select select {
   -webkit-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
   transition-duration: 0.2s; }
-  input:not([type=submit]):hover, textarea:hover, .select select:hover {
-    border-color: #b2b2b3; }
-  input:not([type=submit]):active, input:not([type=submit]):focus, textarea:active, textarea:focus, .select select:active, .select select:focus {
+  input:not([type=submit]):hover,
+  textarea:hover,
+  .select select:hover {
+    border-color: #b3b3b4; }
+  input:not([type=submit]):active, input:not([type=submit]):focus,
+  textarea:active,
+  textarea:focus,
+  .select select:active,
+  .select select:focus {
     background: #FFF;
     border-color: #1F8DD6;
     outline: none; }
-  input:not([type=submit])[disabled], input:not([type=submit])[disabled=disabled], input:not([type=submit])[disabled=true], input:not([type=submit])[disabled], input:not([type=submit])[readonly=true], input:not([type=submit])[readonly=readonly], input:not([type=submit])[readonly], textarea[disabled], textarea[disabled=disabled], textarea[disabled=true], textarea[disabled], textarea[readonly=true], textarea[readonly=readonly], textarea[readonly], .select select[disabled], .select select[disabled=disabled], .select select[disabled=true], .select select[disabled], .select select[readonly=true], .select select[readonly=readonly], .select select[readonly] {
-    border-color: #fafafa; }
-    input:not([type=submit])[disabled]:active, input:not([type=submit])[disabled]:focus, input:not([type=submit])[disabled]:hover, input:not([type=submit])[disabled=disabled]:active, input:not([type=submit])[disabled=disabled]:focus, input:not([type=submit])[disabled=disabled]:hover, input:not([type=submit])[disabled=true]:active, input:not([type=submit])[disabled=true]:focus, input:not([type=submit])[disabled=true]:hover, input:not([type=submit])[disabled]:active, input:not([type=submit])[disabled]:focus, input:not([type=submit])[disabled]:hover, input:not([type=submit])[readonly=true]:active, input:not([type=submit])[readonly=true]:focus, input:not([type=submit])[readonly=true]:hover, input:not([type=submit])[readonly=readonly]:active, input:not([type=submit])[readonly=readonly]:focus, input:not([type=submit])[readonly=readonly]:hover, input:not([type=submit])[readonly]:active, input:not([type=submit])[readonly]:focus, input:not([type=submit])[readonly]:hover, textarea[disabled]:active, textarea[disabled]:focus, textarea[disabled]:hover, textarea[disabled=disabled]:active, textarea[disabled=disabled]:focus, textarea[disabled=disabled]:hover, textarea[disabled=true]:active, textarea[disabled=true]:focus, textarea[disabled=true]:hover, textarea[disabled]:active, textarea[disabled]:focus, textarea[disabled]:hover, textarea[readonly=true]:active, textarea[readonly=true]:focus, textarea[readonly=true]:hover, textarea[readonly=readonly]:active, textarea[readonly=readonly]:focus, textarea[readonly=readonly]:hover, textarea[readonly]:active, textarea[readonly]:focus, textarea[readonly]:hover, .select select[disabled]:active, .select select[disabled]:focus, .select select[disabled]:hover, .select select[disabled=disabled]:active, .select select[disabled=disabled]:focus, .select select[disabled=disabled]:hover, .select select[disabled=true]:active, .select select[disabled=true]:focus, .select select[disabled=true]:hover, .select select[disabled]:active, .select select[disabled]:focus, .select select[disabled]:hover, .select select[readonly=true]:active, .select select[readonly=true]:focus, .select select[readonly=true]:hover, .select select[readonly=readonly]:active, .select select[readonly=readonly]:focus, .select select[readonly=readonly]:hover, .select select[readonly]:active, .select select[readonly]:focus, .select select[readonly]:hover {
-      background: #fafafa;
-      border-color: #fafafa; }
+  input:not([type=submit])[disabled], input:not([type=submit])[disabled=disabled], input:not([type=submit])[disabled=true], input:not([type=submit])[disabled], input:not([type=submit])[readonly=true], input:not([type=submit])[readonly=readonly], input:not([type=submit])[readonly],
+  textarea[disabled],
+  textarea[disabled=disabled],
+  textarea[disabled=true],
+  textarea[disabled],
+  textarea[readonly=true],
+  textarea[readonly=readonly],
+  textarea[readonly],
+  .select select[disabled],
+  .select select[disabled=disabled],
+  .select select[disabled=true],
+  .select select[disabled],
+  .select select[readonly=true],
+  .select select[readonly=readonly],
+  .select select[readonly] {
+    border-color: #fbfbfb; }
+    input:not([type=submit])[disabled]:active, input:not([type=submit])[disabled]:focus, input:not([type=submit])[disabled]:hover, input:not([type=submit])[disabled=disabled]:active, input:not([type=submit])[disabled=disabled]:focus, input:not([type=submit])[disabled=disabled]:hover, input:not([type=submit])[disabled=true]:active, input:not([type=submit])[disabled=true]:focus, input:not([type=submit])[disabled=true]:hover, input:not([type=submit])[disabled]:active, input:not([type=submit])[disabled]:focus, input:not([type=submit])[disabled]:hover, input:not([type=submit])[readonly=true]:active, input:not([type=submit])[readonly=true]:focus, input:not([type=submit])[readonly=true]:hover, input:not([type=submit])[readonly=readonly]:active, input:not([type=submit])[readonly=readonly]:focus, input:not([type=submit])[readonly=readonly]:hover, input:not([type=submit])[readonly]:active, input:not([type=submit])[readonly]:focus, input:not([type=submit])[readonly]:hover,
+    textarea[disabled]:active,
+    textarea[disabled]:focus,
+    textarea[disabled]:hover,
+    textarea[disabled=disabled]:active,
+    textarea[disabled=disabled]:focus,
+    textarea[disabled=disabled]:hover,
+    textarea[disabled=true]:active,
+    textarea[disabled=true]:focus,
+    textarea[disabled=true]:hover,
+    textarea[disabled]:active,
+    textarea[disabled]:focus,
+    textarea[disabled]:hover,
+    textarea[readonly=true]:active,
+    textarea[readonly=true]:focus,
+    textarea[readonly=true]:hover,
+    textarea[readonly=readonly]:active,
+    textarea[readonly=readonly]:focus,
+    textarea[readonly=readonly]:hover,
+    textarea[readonly]:active,
+    textarea[readonly]:focus,
+    textarea[readonly]:hover,
+    .select select[disabled]:active,
+    .select select[disabled]:focus,
+    .select select[disabled]:hover,
+    .select select[disabled=disabled]:active,
+    .select select[disabled=disabled]:focus,
+    .select select[disabled=disabled]:hover,
+    .select select[disabled=true]:active,
+    .select select[disabled=true]:focus,
+    .select select[disabled=true]:hover,
+    .select select[disabled]:active,
+    .select select[disabled]:focus,
+    .select select[disabled]:hover,
+    .select select[readonly=true]:active,
+    .select select[readonly=true]:focus,
+    .select select[readonly=true]:hover,
+    .select select[readonly=readonly]:active,
+    .select select[readonly=readonly]:focus,
+    .select select[readonly=readonly]:hover,
+    .select select[readonly]:active,
+    .select select[readonly]:focus,
+    .select select[readonly]:hover {
+      background: #fbfbfb;
+      border-color: #fbfbfb; }
 
 .select {
   cursor: pointer;
@@ -397,50 +498,40 @@ input:not([type=submit]), textarea, .select select {
 @-webkit-keyframes pulse {
   0% {
     opacity: 1; }
-
   50% {
     opacity: 0.5; }
-
   100% {
     opacity: 1; } }
 
 @-moz-keyframes pulse {
   0% {
     opacity: 1; }
-
   50% {
     opacity: 0.5; }
-
   100% {
     opacity: 1; } }
 
 @-ms-keyframes pulse {
   0% {
     opacity: 1; }
-
   50% {
     opacity: 0.5; }
-
   100% {
     opacity: 1; } }
 
 @-o-keyframes pulse {
   0% {
     opacity: 1; }
-
   50% {
     opacity: 0.5; }
-
   100% {
     opacity: 1; } }
 
 @keyframes pulse {
   0% {
     opacity: 1; }
-
   50% {
     opacity: 0.5; }
-
   100% {
     opacity: 1; } }
 
@@ -487,8 +578,8 @@ input:not([type=submit]), textarea, .select select {
 /* Default styles */
 body {
   background: #FFF;
-  color: #616368;
-  font-family: 'Open Sans', Arial, sans-serif;
+  color: #626468;
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: normal;
   position: relative; }
 
@@ -497,9 +588,14 @@ a {
   color: #1F8DD6;
   text-decoration: none; }
   a:hover {
-    color: #1b7ec0; }
+    color: #1c7fc1; }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #2D3036;
   font-weight: normal;
   line-height: 140%;
@@ -513,21 +609,32 @@ h2 {
   font-size: 24px;
   font-size: 2.4rem; }
 
-h3, h4, h5, h6 {
+h3,
+h4,
+h5,
+h6 {
   font-size: 16px;
   font-size: 1.6rem; }
 
 p {
   margin: 0 0 20px; }
 
-ul, ol {
+ul,
+ol {
   margin: 0 0 10px 20px;
   padding: 0; }
-  ul li, ol li {
+  ul li,
+  ol li {
     padding: 0 0 10px; }
-  ul ul, ul ol, ol ul, ol ol {
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
     margin-bottom: 0; }
-    ul ul li, ul ol li, ol ul li, ol ol li {
+    ul ul li,
+    ul ol li,
+    ol ul li,
+    ol ol li {
       padding: 10px 0 0; }
 
 small {
@@ -540,7 +647,9 @@ button {
   color: inherit;
   outline: none; }
 
-.button, a.button, button.button {
+.button,
+a.button,
+button.button {
   background: #1F8DD6;
   border-radius: 2px;
   color: #FFF;
@@ -553,24 +662,40 @@ button {
   -webkit-transition-duration: 0.1s;
   -moz-transition-duration: 0.1s;
   transition-duration: 0.1s;
-  border: 1px solid #1b7ec0;
+  border: 1px solid #1c7fc1;
   font-size: 12px;
   font-size: 1.2rem;
   text-align: center;
   text-transform: uppercase; }
-  .button:hover, .button:focus, a.button:hover, a.button:focus, button.button:hover, button.button:focus {
+  .button:hover, .button:focus,
+  a.button:hover,
+  a.button:focus,
+  button.button:hover,
+  button.button:focus {
     background: #3598da;
     color: #FFF;
     text-decoration: none; }
-  .button:active, .button.active, a.button:active, a.button.active, button.button:active, button.button.active {
-    background: #1b7ec0;
+  .button:active, .button.active,
+  a.button:active,
+  a.button.active,
+  button.button:active,
+  button.button.active {
+    background: #1c7fc1;
     color: #FFF;
     text-decoration: none; }
-  .button[disabled=disabled], .button[disabled=true], .button[disabled], a.button[disabled=disabled], a.button[disabled=true], a.button[disabled], button.button[disabled=disabled], button.button[disabled=true], button.button[disabled] {
-    background: #fafafa;
-    border-color: #e1e1e1;
-    color: #818286; }
-  .button.add, a.button.add, button.button.add {
+  .button[disabled=disabled], .button[disabled=true], .button[disabled],
+  a.button[disabled=disabled],
+  a.button[disabled=true],
+  a.button[disabled],
+  button.button[disabled=disabled],
+  button.button[disabled=true],
+  button.button[disabled] {
+    background: #fbfbfb;
+    border-color: #e2e2e2;
+    color: #818386; }
+  .button.add,
+  a.button.add,
+  button.button.add {
     background: #31D2B1;
     border-radius: 2px;
     color: #FFF;
@@ -584,19 +709,35 @@ button {
     -moz-transition-duration: 0.1s;
     transition-duration: 0.1s;
     border: 1px solid #2cbd9f; }
-    .button.add:hover, .button.add:focus, a.button.add:hover, a.button.add:focus, button.button.add:hover, button.button.add:focus {
-      background: #45d6b8;
+    .button.add:hover, .button.add:focus,
+    a.button.add:hover,
+    a.button.add:focus,
+    button.button.add:hover,
+    button.button.add:focus {
+      background: #46d7b9;
       color: #FFF;
       text-decoration: none; }
-    .button.add:active, .button.add.active, a.button.add:active, a.button.add.active, button.button.add:active, button.button.add.active {
+    .button.add:active, .button.add.active,
+    a.button.add:active,
+    a.button.add.active,
+    button.button.add:active,
+    button.button.add.active {
       background: #2cbd9f;
       color: #FFF;
       text-decoration: none; }
-    .button.add[disabled=disabled], .button.add[disabled=true], .button.add[disabled], a.button.add[disabled=disabled], a.button.add[disabled=true], a.button.add[disabled], button.button.add[disabled=disabled], button.button.add[disabled=true], button.button.add[disabled] {
-      background: #fafafa;
-      border-color: #e1e1e1;
-      color: #818286; }
-  .button.delete, a.button.delete, button.button.delete {
+    .button.add[disabled=disabled], .button.add[disabled=true], .button.add[disabled],
+    a.button.add[disabled=disabled],
+    a.button.add[disabled=true],
+    a.button.add[disabled],
+    button.button.add[disabled=disabled],
+    button.button.add[disabled=true],
+    button.button.add[disabled] {
+      background: #fbfbfb;
+      border-color: #e2e2e2;
+      color: #818386; }
+  .button.delete,
+  a.button.delete,
+  button.button.delete {
     background: #FF5F5F;
     border-radius: 2px;
     color: #FFF;
@@ -609,29 +750,45 @@ button {
     -webkit-transition-duration: 0.1s;
     -moz-transition-duration: 0.1s;
     transition-duration: 0.1s;
-    border: 1px solid #e55555; }
-    .button.delete:hover, .button.delete:focus, a.button.delete:hover, a.button.delete:focus, button.button.delete:hover, button.button.delete:focus {
+    border: 1px solid #e65656; }
+    .button.delete:hover, .button.delete:focus,
+    a.button.delete:hover,
+    a.button.delete:focus,
+    button.button.delete:hover,
+    button.button.delete:focus {
       background: #ff6f6f;
       color: #FFF;
       text-decoration: none; }
-    .button.delete:active, .button.delete.active, a.button.delete:active, a.button.delete.active, button.button.delete:active, button.button.delete.active {
-      background: #e55555;
+    .button.delete:active, .button.delete.active,
+    a.button.delete:active,
+    a.button.delete.active,
+    button.button.delete:active,
+    button.button.delete.active {
+      background: #e65656;
       color: #FFF;
       text-decoration: none; }
-    .button.delete[disabled=disabled], .button.delete[disabled=true], .button.delete[disabled], a.button.delete[disabled=disabled], a.button.delete[disabled=true], a.button.delete[disabled], button.button.delete[disabled=disabled], button.button.delete[disabled=true], button.button.delete[disabled] {
-      background: #fafafa;
-      border-color: #e1e1e1;
-      color: #818286; }
+    .button.delete[disabled=disabled], .button.delete[disabled=true], .button.delete[disabled],
+    a.button.delete[disabled=disabled],
+    a.button.delete[disabled=true],
+    a.button.delete[disabled],
+    button.button.delete[disabled=disabled],
+    button.button.delete[disabled=true],
+    button.button.delete[disabled] {
+      background: #fbfbfb;
+      border-color: #e2e2e2;
+      color: #818386; }
 
-.cancel, .remove {
+.cancel,
+.remove {
   color: #ABB6C6;
   font-size: 12px;
   font-size: 1.2rem;
   padding: 5px 0;
   text-align: center;
   text-transform: uppercase; }
-  .cancel:hover, .remove:hover {
-    color: #1b7ec0; }
+  .cancel:hover,
+  .remove:hover {
+    color: #1c7fc1; }
 
 .remove:hover {
   color: #FF5F5F; }
@@ -716,15 +873,20 @@ button {
   .icon.next:before {
     content: '>'; }
 
-.header .controls, .actions .controls, table .controls {
+.header .controls,
+.actions .controls,
+table .controls {
   float: right; }
-  .header .controls > *, .actions .controls > *, table .controls > * {
+  .header .controls > *,
+  .actions .controls > *,
+  table .controls > * {
     margin-left: 5px;
     vertical-align: middle; }
 
-code, .code {
-  background: #fafafa;
-  border: 1px solid #dfdfe0;
+code,
+.code {
+  background: #fbfbfb;
+  border: 1px solid #e0e0e1;
   border-radius: 2px;
   display: inline-block;
   font-family: 'Lucidatypewriter', monospace;
@@ -733,7 +895,8 @@ code, .code {
   line-height: 140%;
   padding: 0 5px; }
 
-pre code, pre .code {
+pre code,
+pre .code {
   display: block;
   padding: 5px 10px;
   white-space: pre-wrap; }
@@ -759,16 +922,19 @@ pre code, pre .code {
     display: block; }
   .dropdown > *:first-child {
     cursor: pointer; }
-  .dropdown > a, .dropdown .options > a {
+  .dropdown > a,
+  .dropdown .options > a {
     color: inherit; }
-    .dropdown > a:hover, .dropdown .options > a:hover {
+    .dropdown > a:hover,
+    .dropdown .options > a:hover {
       text-decoration: none; }
   .dropdown .options {
     background: #FFF;
-    border: 1px solid #dfdfe0;
+    border: 1px solid #e0e0e1;
     border-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.03) 0 1px 0 0; }
-    .dropdown .options > .item, .dropdown .options > a {
+    .dropdown .options > .item,
+    .dropdown .options > a {
       display: block;
       margin: 4px 0;
       padding: 4px 10px;
@@ -779,15 +945,16 @@ pre code, pre .code {
       -webkit-transition-duration: 0.2s;
       -moz-transition-duration: 0.2s;
       transition-duration: 0.2s; }
-      .dropdown .options > .item:hover, .dropdown .options > a:hover {
-        background: #fafafa; }
+      .dropdown .options > .item:hover,
+      .dropdown .options > a:hover {
+        background: #fbfbfb; }
     .dropdown .options .separated {
       margin-top: 10px;
       position: relative; }
       .dropdown .options .separated:after {
         content: ' ';
         display: block;
-        border-top: 1px solid #dfdfe0;
+        border-top: 1px solid #e0e0e1;
         left: 0;
         position: absolute;
         top: -5px;
@@ -815,17 +982,26 @@ pre code, pre .code {
   font-size: 1.2rem;
   margin-top: 5px; }
 
-input:not([type=submit]).ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
+input:not([type=submit]).ng-dirty.ng-invalid,
+textarea.ng-dirty.ng-invalid {
   border-color: #FF5F5F; }
-  input:not([type=submit]).ng-dirty.ng-invalid + .description, input:not([type=submit]).ng-dirty.ng-invalid + .status + .description, textarea.ng-dirty.ng-invalid + .description, textarea.ng-dirty.ng-invalid + .status + .description {
+  input:not([type=submit]).ng-dirty.ng-invalid + .description,
+  input:not([type=submit]).ng-dirty.ng-invalid + .status + .description,
+  textarea.ng-dirty.ng-invalid + .description,
+  textarea.ng-dirty.ng-invalid + .status + .description {
     color: #FF5F5F; }
-  input:not([type=submit]).ng-dirty.ng-invalid + .status:before, textarea.ng-dirty.ng-invalid + .status:before {
+  input:not([type=submit]).ng-dirty.ng-invalid + .status:before,
+  textarea.ng-dirty.ng-invalid + .status:before {
     color: #FF5F5F;
     content: 'x'; }
-input:not([type=submit]).ng-valid + .status:before, textarea.ng-valid + .status:before {
+
+input:not([type=submit]).ng-valid + .status:before,
+textarea.ng-valid + .status:before {
   color: #31D2B1;
   content: 'o'; }
-input:not([type=submit]).processing + .status:before, textarea.processing + .status:before {
+
+input:not([type=submit]).processing + .status:before,
+textarea.processing + .status:before {
   color: #1F8DD6;
   content: 'l';
   -webkit-animation: spinning 1.2s linear infinite;
@@ -834,7 +1010,8 @@ input:not([type=submit]).processing + .status:before, textarea.processing + .sta
   -o-animation: spinning 1.2s linear infinite;
   animation: spinning 1.2s linear infinite; }
 
-label, .label {
+label,
+.label {
   font-size: 12px;
   font-size: 1.2rem;
   color: inherit;
@@ -893,7 +1070,7 @@ label, .label {
     border-color: #1F8DD6; } }
 
 .empty {
-  background: #fafafa;
+  background: #fbfbfb;
   border-radius: 2px;
   padding: 15px;
   text-align: center; }
@@ -903,32 +1080,46 @@ label, .label {
   margin: 0;
   margin-bottom: 20px;
   padding: 0; }
-  .list .item, .list > .header, .list > .footer {
-    border: 1px solid #dfdfe0;
+  .list .item,
+  .list > .header,
+  .list > .footer {
+    border: 1px solid #e0e0e1;
     border-bottom-width: 0;
     padding: 0; }
-    .list .item.new, .list > .header.new, .list > .footer.new {
+    .list .item.new,
+    .list > .header.new,
+    .list > .footer.new {
       -webkit-animation: new 4s linear;
       -moz-animation: new 4s linear;
       -ms-animation: new 4s linear;
       -o-animation: new 4s linear;
       animation: new 4s linear; }
-    .list .item.collapsible, .list > .header.collapsible, .list > .footer.collapsible {
+    .list .item.collapsible,
+    .list > .header.collapsible,
+    .list > .footer.collapsible {
       -webkit-transition-property: border;
       -moz-transition-property: border;
       transition-property: border;
       -webkit-transition-duration: 0.2s;
       -moz-transition-duration: 0.2s;
       transition-duration: 0.2s; }
-      .list .item.collapsible:hover, .list > .header.collapsible:hover, .list > .footer.collapsible:hover {
-        border-color: #bdbdbe; }
-        .list .item.collapsible:hover + .item, .list > .header.collapsible:hover + .item, .list > .footer.collapsible:hover + .item {
-          border-top-color: #bdbdbe; }
-      .list .item.collapsible.active .body, .list > .header.collapsible.active .body, .list > .footer.collapsible.active .body {
+      .list .item.collapsible:hover,
+      .list > .header.collapsible:hover,
+      .list > .footer.collapsible:hover {
+        border-color: #bebebf; }
+        .list .item.collapsible:hover + .item,
+        .list > .header.collapsible:hover + .item,
+        .list > .footer.collapsible:hover + .item {
+          border-top-color: #bebebf; }
+      .list .item.collapsible.active .body,
+      .list > .header.collapsible.active .body,
+      .list > .footer.collapsible.active .body {
         display: block; }
-  .list > .item:first-child, .list > .header {
+  .list > .item:first-child,
+  .list > .header {
     border-radius: 2px 2px 0 0; }
-  .list > .item:last-child, .list > .footer {
+  .list > .item:last-child,
+  .list > .footer {
     border-radius: 0 0 2px 2px;
     border-bottom-width: 1px; }
 
@@ -977,7 +1168,7 @@ label, .label {
     z-index: 999; }
 
 .notification {
-  background: #fafafa;
+  background: #fbfbfb;
   border-radius: 2px;
   display: block;
   margin-bottom: 20px;
@@ -993,8 +1184,8 @@ label, .label {
   .notification.undefined {
     background: #8B66CB; }
   .notification.warning {
-    background: #ffdc9e;
-    color: #322712; }
+    background: #ffdd9e;
+    color: #332813; }
   .notification > *:last-child {
     margin-bottom: 0; }
   .notification a {
@@ -1054,13 +1245,13 @@ label, .label {
   text-align: left;
   z-index: 3000; }
   #modal > .header {
-    border-bottom: 1px solid #dfdfe0;
+    border-bottom: 1px solid #e0e0e1;
     padding: 15px 20px; }
     #modal > .header h2 {
       font-size: inherit;
       margin: 0; }
     #modal > .header .close {
-      color: #dfdfe0;
+      color: #e0e0e1;
       float: right;
       font-size: 24px;
       font-size: 2.4rem;
@@ -1092,6 +1283,7 @@ body.modal #overlay {
   background: rgba(0, 0, 0, 0.3);
   opacity: 1;
   visibility: visible; }
+
 body.modal #modal {
   display: block; }
 
@@ -1101,9 +1293,11 @@ table {
     padding: 5px 10px; }
   table td {
     padding: 15px 10px; }
-  table th:first-child, table td:first-child {
+  table th:first-child,
+  table td:first-child {
     padding-left: 5px; }
-  table th:last-child, table td:last-child {
+  table th:last-child,
+  table td:last-child {
     padding-right: 5px; }
   table thead {
     color: #ABB6C6;
@@ -1113,7 +1307,7 @@ table {
       font-weight: normal;
       white-space: nowrap; }
   table tbody tr {
-    border-top: 1px solid #dfdfe0;
+    border-top: 1px solid #e0e0e1;
     -webkit-transition-property: border;
     -moz-transition-property: border;
     transition-property: border;
@@ -1121,11 +1315,11 @@ table {
     -moz-transition-duration: 0.2s;
     transition-duration: 0.2s; }
     table tbody tr:last-child {
-      border-bottom: 1px solid #dfdfe0; }
+      border-bottom: 1px solid #e0e0e1; }
     table tbody tr:hover {
-      border-color: #bdbdbe; }
+      border-color: #bebebf; }
       table tbody tr:hover + tr {
-        border-top-color: #bdbdbe; }
+        border-top-color: #bebebf; }
 
 /* Layout */
 #main {
@@ -1161,13 +1355,18 @@ body {
   padding-top: 80px;
   padding-bottom: 80px;
   background: #2D3036; }
-  .header h1, .header h2, .header h3, .header h4, .header h5, .header h6 {
+  .header h1,
+  .header h2,
+  .header h3,
+  .header h4,
+  .header h5,
+  .header h6 {
     color: #F8F9FC; }
 
 .example {
   margin-bottom: 40px; }
   .example .title {
-    font-size: 2rem; }
+    font-size: 2.0rem; }
   .example .result {
     font-size: 1.4rem;
     display: block; }
@@ -1209,13 +1408,18 @@ body {
       display: block;
       margin-bottom: 0;
       margin-left: 10px; }
+    .crouton div h2 {
+      color: #F8F9FC; }
     .crouton div .buttons {
       text-align: right; }
-      .crouton div .buttons button.retry, .crouton div .buttons button.close, .crouton div .buttons button.cancel, .crouton div .buttons button.ignore {
+      .crouton div .buttons button.btn, .crouton div .buttons button.retry, .crouton div .buttons button.close, .crouton div .buttons button.cancel, .crouton div .buttons button.ignore {
         padding: 5px 15px;
         border: 1px solid transparent;
         border-radius: 2px; }
       .crouton div .buttons button:hover {
-        opacity: 0.75; }
+        opacity: .75; }
       .crouton div .buttons button.retry {
         border-color: #FFF; }
+      .crouton div .buttons button.btn.close {
+        border-color: #FF5F5F;
+        margin-left: 10px; }
