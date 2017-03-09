@@ -31,7 +31,7 @@ module.exports = React.createClass({
     message: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.array
-    ]).isRequired,
+    ]),
     type: PropTypes.string.isRequired,
     /**
      * Buttons can be either `string` or `array`
