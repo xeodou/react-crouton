@@ -1,5 +1,6 @@
 var React = require('react');
-var PropTypes = React.PropTypes;
+var PropTypes = require('prop-types');
+var CreateReactClass = require('create-react-class');
 
 var noop = function() {}
 
@@ -18,7 +19,7 @@ function formatButtons(buttons) {
   return buttons || null;
 }
 
-module.exports = React.createClass({
+module.exports = CreateReactClass({
 
   displayName: 'react-crouton',
 
