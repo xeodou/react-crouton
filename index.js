@@ -121,7 +121,7 @@ module.exports = CreateReactClass({
     var message = nextProps.message
     if (typeof message === 'string')
       message = [message];
-    var autoMiss = nextProps.autoMiss ? (buttons ? false : true) : nextProps.autoMiss;
+    var autoMiss = nextProps.autoMiss;
     if (autoMiss && !nextProps.hidden) {
       var ttd = setTimeout(this.dismiss, nextProps.timeout || this.props.timeout);
       // this.dismiss();
